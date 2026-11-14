@@ -1,123 +1,194 @@
-# Temporary accelerated schedule for live integration tests.
-version: 2
-updates:
-- package-ecosystem: npm
-  schedule:
-    interval: cron
-    cronjob: '*/5 * * * *'
-    timezone: Asia/Tokyo
-  target-branch: main
-  ignore:
-  - dependency-name: '*'
-    update-types:
-    - version-update:semver-major
-  directory: /cases/grouped
-  open-pull-requests-limit: 1
-  groups:
-    all-dependencies:
-      patterns:
-      - '*'
-  cooldown:
-    default-days: 7
-    semver-minor-days: 7
-    semver-patch-days: 3
-  commit-message:
-    prefix: chore
-    include: scope
-  labels:
-  - dependencies
-  assignees:
-  - mergelog
-- package-ecosystem: npm
-  schedule:
-    interval: cron
-    cronjob: '*/5 * * * *'
-    timezone: Asia/Tokyo
-  target-branch: main
-  ignore:
-  - dependency-name: '*'
-    update-types:
-    - version-update:semver-major
-  directory: /cases/limited
-  open-pull-requests-limit: 1
-- package-ecosystem: npm
-  schedule:
-    interval: cron
-    cronjob: '*/5 * * * *'
-    timezone: Asia/Tokyo
-  target-branch: main
-  ignore:
-  - dependency-name: '*'
-    update-types:
-    - version-update:semver-major
-  directory: /cases/paused
-  open-pull-requests-limit: 0
-- package-ecosystem: npm
-  schedule:
-    interval: cron
-    cronjob: '*/5 * * * *'
-    timezone: Asia/Tokyo
-  target-branch: dependency-testing
-  ignore:
-  - dependency-name: '*'
-    update-types:
-    - version-update:semver-major
-  directory: /cases/target
-  open-pull-requests-limit: 1
-  groups:
-    all-dependencies:
-      patterns:
-      - '*'
-- package-ecosystem: npm
-  schedule:
-    interval: cron
-    cronjob: '*/5 * * * *'
-    timezone: Asia/Tokyo
-  target-branch: main
-  ignore:
-  - dependency-name: '*'
-    update-types:
-    - version-update:semver-major
-  directory: /cases/rebase-disabled
-  open-pull-requests-limit: 1
-  rebase-strategy: disabled
-- package-ecosystem: npm
-  schedule:
-    interval: cron
-    cronjob: '*/5 * * * *'
-    timezone: Asia/Tokyo
-  target-branch: main
-  ignore:
-  - dependency-name: '*'
-    update-types:
-    - version-update:semver-major
-  directory: /cases/lockfile
-  open-pull-requests-limit: 1
-  versioning-strategy: lockfile-only
-- package-ecosystem: npm
-  directory: /
-  schedule:
-    interval: cron
-    cronjob: '*/5 * * * *'
-    timezone: Asia/Tokyo
-  groups:
-    default-control:
-      patterns:
-      - '*'
-  open-pull-requests-limit: 1
-  ignore:
-  - dependency-name: '*'
-    update-types:
-    - version-update:semver-major
-- package-ecosystem: npm
-  directory: /cases/security
-  schedule:
-    interval: cron
-    cronjob: '*/5 * * * *'
-    timezone: Asia/Tokyo
-  groups:
-    security-fixes:
-      applies-to: security-updates
-      patterns:
-      - '*'
-  open-pull-requests-limit: 0
+# Live integration: JSON syntax is also YAML; quote all scalar strings explicitly.
+{
+  "version": 2,
+  "updates": [
+    {
+      "package-ecosystem": "npm",
+      "schedule": {
+        "interval": "cron",
+        "cronjob": "25 18 * * *",
+        "timezone": "Asia/Tokyo"
+      },
+      "target-branch": "main",
+      "ignore": [
+        {
+          "dependency-name": "*",
+          "update-types": [
+            "version-update:semver-major"
+          ]
+        }
+      ],
+      "directory": "/cases/grouped",
+      "open-pull-requests-limit": 1,
+      "groups": {
+        "all-dependencies": {
+          "patterns": [
+            "*"
+          ]
+        }
+      },
+      "cooldown": {
+        "default-days": 7,
+        "semver-minor-days": 7,
+        "semver-patch-days": 3
+      },
+      "commit-message": {
+        "prefix": "chore",
+        "include": "scope"
+      },
+      "labels": [
+        "dependencies"
+      ],
+      "assignees": [
+        "mergelog"
+      ]
+    },
+    {
+      "package-ecosystem": "npm",
+      "schedule": {
+        "interval": "cron",
+        "cronjob": "25 18 * * *",
+        "timezone": "Asia/Tokyo"
+      },
+      "target-branch": "main",
+      "ignore": [
+        {
+          "dependency-name": "*",
+          "update-types": [
+            "version-update:semver-major"
+          ]
+        }
+      ],
+      "directory": "/cases/limited",
+      "open-pull-requests-limit": 1
+    },
+    {
+      "package-ecosystem": "npm",
+      "schedule": {
+        "interval": "cron",
+        "cronjob": "25 18 * * *",
+        "timezone": "Asia/Tokyo"
+      },
+      "target-branch": "main",
+      "ignore": [
+        {
+          "dependency-name": "*",
+          "update-types": [
+            "version-update:semver-major"
+          ]
+        }
+      ],
+      "directory": "/cases/paused",
+      "open-pull-requests-limit": 0
+    },
+    {
+      "package-ecosystem": "npm",
+      "schedule": {
+        "interval": "cron",
+        "cronjob": "25 18 * * *",
+        "timezone": "Asia/Tokyo"
+      },
+      "target-branch": "dependency-testing",
+      "ignore": [
+        {
+          "dependency-name": "*",
+          "update-types": [
+            "version-update:semver-major"
+          ]
+        }
+      ],
+      "directory": "/cases/target",
+      "open-pull-requests-limit": 1,
+      "groups": {
+        "all-dependencies": {
+          "patterns": [
+            "*"
+          ]
+        }
+      }
+    },
+    {
+      "package-ecosystem": "npm",
+      "schedule": {
+        "interval": "cron",
+        "cronjob": "25 18 * * *",
+        "timezone": "Asia/Tokyo"
+      },
+      "target-branch": "main",
+      "ignore": [
+        {
+          "dependency-name": "*",
+          "update-types": [
+            "version-update:semver-major"
+          ]
+        }
+      ],
+      "directory": "/cases/rebase-disabled",
+      "open-pull-requests-limit": 1,
+      "rebase-strategy": "disabled"
+    },
+    {
+      "package-ecosystem": "npm",
+      "schedule": {
+        "interval": "cron",
+        "cronjob": "25 18 * * *",
+        "timezone": "Asia/Tokyo"
+      },
+      "target-branch": "main",
+      "ignore": [
+        {
+          "dependency-name": "*",
+          "update-types": [
+            "version-update:semver-major"
+          ]
+        }
+      ],
+      "directory": "/cases/lockfile",
+      "open-pull-requests-limit": 1,
+      "versioning-strategy": "lockfile-only"
+    },
+    {
+      "package-ecosystem": "npm",
+      "directory": "/",
+      "schedule": {
+        "interval": "cron",
+        "cronjob": "25 18 * * *",
+        "timezone": "Asia/Tokyo"
+      },
+      "groups": {
+        "default-control": {
+          "patterns": [
+            "*"
+          ]
+        }
+      },
+      "open-pull-requests-limit": 1,
+      "ignore": [
+        {
+          "dependency-name": "*",
+          "update-types": [
+            "version-update:semver-major"
+          ]
+        }
+      ]
+    },
+    {
+      "package-ecosystem": "npm",
+      "directory": "/cases/security",
+      "schedule": {
+        "interval": "cron",
+        "cronjob": "25 18 * * *",
+        "timezone": "Asia/Tokyo"
+      },
+      "groups": {
+        "security-fixes": {
+          "applies-to": "security-updates",
+          "patterns": [
+            "*"
+          ]
+        }
+      },
+      "open-pull-requests-limit": 0
+    }
+  ]
+}

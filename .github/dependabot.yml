@@ -1,12 +1,13 @@
-# Live integration: explicitly quoted strings.
+# Verification complete: normal version updates paused for all cases.
 {
   "version": 2,
   "updates": [
     {
       "package-ecosystem": "npm",
       "schedule": {
-        "interval": "cron",
-        "cronjob": "25 18 * * *",
+        "interval": "weekly",
+        "day": "monday",
+        "time": "09:00",
         "timezone": "Asia/Tokyo"
       },
       "target-branch": "main",
@@ -19,7 +20,7 @@
         }
       ],
       "directory": "/cases/grouped",
-      "open-pull-requests-limit": 1,
+      "open-pull-requests-limit": 0,
       "groups": {
         "all-dependencies": {
           "patterns": [
@@ -46,8 +47,9 @@
     {
       "package-ecosystem": "npm",
       "schedule": {
-        "interval": "cron",
-        "cronjob": "25 18 * * *",
+        "interval": "weekly",
+        "day": "monday",
+        "time": "09:00",
         "timezone": "Asia/Tokyo"
       },
       "target-branch": "main",
@@ -60,13 +62,14 @@
         }
       ],
       "directory": "/cases/limited",
-      "open-pull-requests-limit": 2
+      "open-pull-requests-limit": 0
     },
     {
       "package-ecosystem": "npm",
       "schedule": {
-        "interval": "cron",
-        "cronjob": "25 18 * * *",
+        "interval": "weekly",
+        "day": "monday",
+        "time": "09:00",
         "timezone": "Asia/Tokyo"
       },
       "target-branch": "main",
@@ -84,8 +87,9 @@
     {
       "package-ecosystem": "npm",
       "schedule": {
-        "interval": "cron",
-        "cronjob": "25 18 * * *",
+        "interval": "weekly",
+        "day": "monday",
+        "time": "09:00",
         "timezone": "Asia/Tokyo"
       },
       "target-branch": "dependency-testing",
@@ -98,7 +102,7 @@
         }
       ],
       "directory": "/cases/target",
-      "open-pull-requests-limit": 1,
+      "open-pull-requests-limit": 0,
       "groups": {
         "all-dependencies": {
           "patterns": [
@@ -110,8 +114,9 @@
     {
       "package-ecosystem": "npm",
       "schedule": {
-        "interval": "cron",
-        "cronjob": "25 18 * * *",
+        "interval": "weekly",
+        "day": "monday",
+        "time": "09:00",
         "timezone": "Asia/Tokyo"
       },
       "target-branch": "main",
@@ -124,14 +129,15 @@
         }
       ],
       "directory": "/cases/rebase-disabled",
-      "open-pull-requests-limit": 1,
+      "open-pull-requests-limit": 0,
       "rebase-strategy": "disabled"
     },
     {
       "package-ecosystem": "npm",
       "schedule": {
-        "interval": "cron",
-        "cronjob": "25 18 * * *",
+        "interval": "weekly",
+        "day": "monday",
+        "time": "09:00",
         "timezone": "Asia/Tokyo"
       },
       "target-branch": "main",
@@ -144,15 +150,16 @@
         }
       ],
       "directory": "/cases/lockfile",
-      "open-pull-requests-limit": 1,
+      "open-pull-requests-limit": 0,
       "versioning-strategy": "lockfile-only"
     },
     {
       "package-ecosystem": "npm",
       "directory": "/",
       "schedule": {
-        "interval": "cron",
-        "cronjob": "25 18 * * *",
+        "interval": "weekly",
+        "day": "monday",
+        "time": "09:00",
         "timezone": "Asia/Tokyo"
       },
       "groups": {
@@ -162,7 +169,7 @@
           ]
         }
       },
-      "open-pull-requests-limit": 1,
+      "open-pull-requests-limit": 0,
       "ignore": [
         {
           "dependency-name": "*",
@@ -176,8 +183,9 @@
       "package-ecosystem": "npm",
       "directory": "/cases/security",
       "schedule": {
-        "interval": "cron",
-        "cronjob": "25 18 * * *",
+        "interval": "weekly",
+        "day": "monday",
+        "time": "09:00",
         "timezone": "Asia/Tokyo"
       },
       "groups": {
@@ -194,7 +202,10 @@
       "package-ecosystem": "npm",
       "directory": "/cases/security-grouped",
       "schedule": {
-        "interval": "weekly"
+        "interval": "weekly",
+        "day": "monday",
+        "time": "09:00",
+        "timezone": "Asia/Tokyo"
       },
       "open-pull-requests-limit": 0,
       "groups": {

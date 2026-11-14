@@ -1,11 +1,10 @@
-# Live integration cases adapted from dpb-test examples.
+# Temporary accelerated schedule for live integration tests.
 version: 2
 updates:
 - package-ecosystem: npm
   schedule:
-    interval: weekly
-    day: monday
-    time: 09:00
+    interval: cron
+    cronjob: '*/5 * * * *'
     timezone: Asia/Tokyo
   target-branch: main
   ignore:
@@ -31,9 +30,8 @@ updates:
   - mergelog
 - package-ecosystem: npm
   schedule:
-    interval: weekly
-    day: monday
-    time: 09:00
+    interval: cron
+    cronjob: '*/5 * * * *'
     timezone: Asia/Tokyo
   target-branch: main
   ignore:
@@ -44,9 +42,8 @@ updates:
   open-pull-requests-limit: 1
 - package-ecosystem: npm
   schedule:
-    interval: weekly
-    day: monday
-    time: 09:00
+    interval: cron
+    cronjob: '*/5 * * * *'
     timezone: Asia/Tokyo
   target-branch: main
   ignore:
@@ -57,9 +54,8 @@ updates:
   open-pull-requests-limit: 0
 - package-ecosystem: npm
   schedule:
-    interval: weekly
-    day: monday
-    time: 09:00
+    interval: cron
+    cronjob: '*/5 * * * *'
     timezone: Asia/Tokyo
   target-branch: dependency-testing
   ignore:
@@ -74,9 +70,8 @@ updates:
       - '*'
 - package-ecosystem: npm
   schedule:
-    interval: weekly
-    day: monday
-    time: 09:00
+    interval: cron
+    cronjob: '*/5 * * * *'
     timezone: Asia/Tokyo
   target-branch: main
   ignore:
@@ -88,9 +83,8 @@ updates:
   rebase-strategy: disabled
 - package-ecosystem: npm
   schedule:
-    interval: weekly
-    day: monday
-    time: 09:00
+    interval: cron
+    cronjob: '*/5 * * * *'
     timezone: Asia/Tokyo
   target-branch: main
   ignore:

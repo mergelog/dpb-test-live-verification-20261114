@@ -94,3 +94,18 @@ updates:
   directory: /cases/lockfile
   open-pull-requests-limit: 1
   versioning-strategy: lockfile-only
+- package-ecosystem: npm
+  directory: /
+  schedule:
+    interval: cron
+    cronjob: '*/5 * * * *'
+    timezone: Asia/Tokyo
+  groups:
+    default-control:
+      patterns:
+      - '*'
+  open-pull-requests-limit: 1
+  ignore:
+  - dependency-name: '*'
+    update-types:
+    - version-update:semver-major

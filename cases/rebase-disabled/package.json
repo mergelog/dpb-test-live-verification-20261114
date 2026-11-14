@@ -1,0 +1,8 @@
+{
+  "name": "dependabot-live-rebase-disabled",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "rxjs": "7.8.1"
+  }
+}

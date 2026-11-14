@@ -109,3 +109,15 @@ updates:
   - dependency-name: '*'
     update-types:
     - version-update:semver-major
+- package-ecosystem: npm
+  directory: /cases/security
+  schedule:
+    interval: cron
+    cronjob: '*/5 * * * *'
+    timezone: Asia/Tokyo
+  groups:
+    security-fixes:
+      applies-to: security-updates
+      patterns:
+      - '*'
+  open-pull-requests-limit: 0
